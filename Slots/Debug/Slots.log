@@ -1,0 +1,3 @@
+﻿  Slots.cpp
+D:\Coding Projects\Slots\Slots.cpp(33,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Slots.vcxproj -> D:\Coding Projects\Slots\Debug\Slots.exe
