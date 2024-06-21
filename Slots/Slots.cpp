@@ -12,7 +12,7 @@ int balance = 1000;
 bool canBet = false;
 void bet() {
     cout << "C = Cherry, L = Lemon, B = Bell, R = BAR" << endl;
-    cout << "Payouts: CCC = 25x, LLL = 50x, BBB = 100x, RRR = 250x, 777 = 500x" << endl << endl;
+    cout << "Payouts: CCC = 2x, LLL = 5x, BBB = 10x, RRR = 25x, 777 = 50x" << endl << endl;
     cout << "How much do you want to bet? Your current balance is: " << balance << endl;
     while (canBet == false) {
         cin >> betAmount;
@@ -46,42 +46,42 @@ void printScreen() {
 void payout() {
         if (slot1 <=5 && slot2 <=5 && slot3 <=5) {
             //Cherry
-            balance += betAmount * 25;
+            balance += betAmount * 2;
             cout << "CONGRATS, YOU WIN!!" << endl;
-            cout << "Your current balance is now " << balance;
+            cout << "Your current balance is now " << balance << endl;
         }
         else if (slot1 == 6 && slot2 == 6 && slot3 == 6) {
             //7
-            balance += betAmount * 500;
+            balance += betAmount * 50;
             cout << "CONGRATS, YOU WIN!!" << endl;
-            cout << "Your current balance is now " << balance;
+            cout << "Your current balance is now " << balance << endl;
         }
         else if ((7 <= slot1 && slot1 <= 10) && (7 <= slot2 && slot2 <= 10) && (7 <= slot3 && slot3 <= 10)) {
             //Bell
-            balance += betAmount * 100;
+            balance += betAmount * 10;
             cout << "CONGRATS, YOU WIN!!" << endl;
-            cout << "Your current balance is now " << balance;
+            cout << "Your current balance is now " << balance << endl;
         }
         else if ((11 <= slot1 && slot1 <= 12) && (11 <= slot2 && slot2 <= 12) && (11 <= slot3 && slot3 <= 12)) {
             //BAR
-            balance += betAmount * 250;
+            balance += betAmount * 25;
             cout << "CONGRATS, YOU WIN!!" << endl;
-            cout << "Your current balance is now " << balance;
+            cout << "Your current balance is now " << balance << endl;
         }
         else if (slot1 >= 13 && slot2 >= 13 && slot3 >= 13) {
             //Lemon
-            balance += betAmount * 50;
+            balance += betAmount * 5;
             cout << "CONGRATS, YOU WIN!!" << endl;
-            cout << "Your current balance is now " << balance;
+            cout << "Your current balance is now " << balance << endl;
         }
     }
 int main()
 {
-        bet();
+    bet();
     while (true) {
         balance -= betAmount;
         if (balance < 0) {
-            balance = 0;
+            balance = 0; //ensures balance is not a negative number
             cout << "You ran out of money" << endl;
             system("pause");
             exit(0);
